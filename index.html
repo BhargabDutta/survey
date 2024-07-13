@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style2.css">
+    <style>
+        .form-page {
+            display: none;
+        }
+
+        .form-page.active {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bg"></div>
+
+    <main class="form-signin">
+        <div class="form-page active" id="page1">
+            <form>
+                <div class="form-floating">
+                    <h1 style="text-align: left;">I am talking to :</h1>
+                    <div class="grid">
+                        <label class="card">
+                            <input class="card__input" type="checkbox" />
+                            <div class="card__body">
+                                <div class="card__body-cover"><img class="card__body-cover-image"
+                                        src="student.jpg" /><span
+                                        class="card__body-cover-checkbox">
+                                        <svg class="card__body-cover-checkbox--svg" viewBox="0 0 12 10">
+                                            <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                                        </svg></span></div>
+                                <header class="card__body-header">
+                                    <!-- <h2 class="card__body-header-title">Category A</h2> -->
+                                    <p class="card__body-header-subtitle">Prospective Student</p>
+                                </header>
+                            </div>
+                        </label>
+                        <label class="card">
+                            <input class="card__input" type="checkbox" />
+                            <div class="card__body">
+                                <div class="card__body-cover"><img class="card__body-cover-image"
+                                        src="parent.jpg" /><span
+                                        class="card__body-cover-checkbox">
+                                        <svg class="card__body-cover-checkbox--svg" viewBox="0 0 12 10">
+                                            <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                                        </svg></span></div>
+                                <header class="card__body-header">
+                                    <!-- <h2 class="card__body-header-title">Category B</h2> -->
+                                    <p class="card__body-header-subtitle">Parent Guardian </p>
+                                </header>
+                            </div>
+                        </label>
+                        <label class="card">
+                            <input class="card__input" type="checkbox" />
+                            <div class="card__body">
+                                <div class="card__body-cover"><img class="card__body-cover-image"
+                                        src="other.png" /><span
+                                        class="card__body-cover-checkbox">
+                                        <svg class="card__body-cover-checkbox--svg" viewBox="0 0 12 10">
+                                            <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                                        </svg></span></div>
+                                <header class="card__body-header">
+                                    <!-- <h2 class="card__body-header-title">Category C</h2> -->
+                                    <p class="card__body-header-subtitle">Other</p>
+                                </header>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+                <button class="w-100 btn btn-lg" type="button" style="margin-top: 20px;"
+                    onclick="nextPage()">Next</button>
+            </form>
+        </div>
+
+        <div class="form-page" id="page2">
+            <form>
+                <div class="form-floating">
+                    <h1 style="text-align: left;">What describe you best :</h1>
+                    <div class="grid" style="grid-template-columns: 1fr 1fr;">
+                        <label class="card" style="width: fit-content; margin-left: 20px;">
+                            <input class="card__input" type="checkbox" />
+                            <div class="card__body">
+                                <div class="card__body-cover"><img class="card__body-cover-image"
+                                        src="highschool.jpg" /><span
+                                        class="card__body-cover-checkbox">
+                                        <svg class="card__body-cover-checkbox--svg" viewBox="0 0 12 10">
+                                            <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                                        </svg></span></div>
+                                <header class="card__body-header">
+                                    <!-- <h2 class="card__body-header-title">Category A</h2> -->
+                                    <p class="card__body-header-subtitle">High school student</p>
+                                </header>
+                            </div>
+                        </label>
+                        <label class="card" style="width: fit-content; margin-left: 20px;">
+                            <input class="card__input" type="checkbox" />
+                            <div class="card__body">
+                                <div class="card__body-cover"><img class="card__body-cover-image"
+                                        src="collagestudent.jpg" /><span
+                                        class="card__body-cover-checkbox">
+                                        <svg class="card__body-cover-checkbox--svg" viewBox="0 0 12 10">
+                                            <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                                        </svg></span></div>
+                                <header class="card__body-header">
+                                    <!-- <h2 class="card__body-header-title">Category B</h2> -->
+                                    <p class="card__body-header-subtitle">College student</p>
+                                </header>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+                <button class="w-100 btn btn-lg" type="button" style="margin-top: 20px;"
+                    onclick="prevPage()">Previous</button>
+                <button class="w-100 btn btn-lg" type="button" style="margin-top: 20px;"
+                    onclick="nextPage()">Next</button>
+            </form>
+        </div>
+
+        <div class="form-page" id="page3">
+            <form>
+                <div class="form-floating">
+                    <h1 style="text-align: left;">What do you want to see at our campus?</h1>
+                    <div class="grid">
+                        <label class="card">
+                            <input class="card__input" type="checkbox" />
+                            <div class="card__body" style="width: 250px;">
+                                <div class="card__body-cover"><img class="card__body-cover-image"
+                                        src="classroom.jpg" /><span
+                                        class="card__body-cover-checkbox">
+                                        <svg class="card__body-cover-checkbox--svg" viewBox="0 0 12 10">
+                                            <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                                        </svg></span></div>
+                                <header class="card__body-header">
+                                    <!-- <h2 class="card__body-header-title">Category A</h2> -->
+                                    <p class="card__body-header-subtitle">Classroom</p>
+                                </header>
+                            </div>
+                        </label>
+                        <label class="card">
+                            <input class="card__input" type="checkbox" />
+                            <div class="card__body" style="width: 250px;">
+                                <div class="card__body-cover"><img class="card__body-cover-image"
+                                        src="library.jpg" /><span
+                                        class="card__body-cover-checkbox">
+                                        <svg class="card__body-cover-checkbox--svg" viewBox="0 0 12 10">
+                                            <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                                        </svg></span></div>
+                                <header class="card__body-header">
+                                    <!-- <h2 class="card__body-header-title">Category B</h2> -->
+                                    <p class="card__body-header-subtitle">Library</p>
+                                </header>
+                            </div>
+                        </label>
+                        <label class="card">
+                            <input class="card__input" type="checkbox" />
+                            <div class="card__body" style="width: 250px;">
+                                <div class="card__body-cover"><img class="card__body-cover-image"
+                                        src="hostel.jpg" /><span
+                                        class="card__body-cover-checkbox">
+                                        <svg class="card__body-cover-checkbox--svg" viewBox="0 0 12 10">
+                                            <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                                        </svg></span></div>
+                                <header class="card__body-header">
+                                    <!-- <h2 class="card__body-header-title">Category C</h2> -->
+                                    <p class="card__body-header-subtitle">Hostel</p>
+                                </header>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+                <button class="w-100 btn btn-lg" type="button" style="margin-top: 20px;"
+                    onclick="prevPage()">Previous</button>
+                    <button class="w-100 btn btn-lg" type="button" style="margin-top: 20px;"
+                    onclick="nextPage()">Next</button>
+            </form>
+        </div>
+        
+        <div class="form-page" id="page4">
+            <form>
+                <div class="form-floating" style="display: flex; flex-direction: column;">
+                    <div style="color: white; margin-left: 20px;">Name</div>
+                    <input type="text" name="name" placeholder="Enter Your name" style="padding: 2%; border-radius: 20px; margin: 20px;width: 500px;">
+
+                    <div style="color: white; margin-left: 20px;">Email</div>
+                    <input type="email" name="email" id="" placeholder="xyz@example.com" style="padding: 2%; border-radius: 20px; margin: 20px;width: 500px;">
+
+                    <div style="color: white; margin-left: 20px;">Phone</div>
+                    <input type="number" name="phone number" id="" placeholder="Your phone number" style="padding: 2%; border-radius: 20px; margin: 20px;width: 500px;">
+                </div>
+                <button class="w-100 btn btn-lg" type="button" style="margin-top: 20px;"
+                    onclick="prevPage()">Previous</button>
+                    <button class="w-100 btn btn-lg" type="button" onclick="submitForm()" style="margin-top: 20px;">Submit</button>
+
+            </form>
+        </div>
+    </main>
+
+    <script>
+        let currentPage = 1;
+        const pages = document.querySelectorAll('.form-page');
+
+        function nextPage() {
+            if (currentPage < pages.length) {
+                pages[currentPage - 1].classList.remove('active');
+                currentPage++;
+                pages[currentPage - 1].classList.add('active');
+            }
+        }
+
+        function prevPage() {
+            if (currentPage > 1) {
+                pages[currentPage - 1].classList.remove('active');
+                currentPage--;
+                pages[currentPage - 1].classList.add('active');
+            }
+        }
+
+        function submitForm() {
+            // Here you can collect form data and submit if needed
+            alert('Form submitted successfully!');
+            // For demonstration, resetting the form and going back to first page
+            document.getElementById('page3').querySelector('form').reset();
+            currentPage = 1;
+            pages.forEach(page => page.classList.remove('active'));
+            pages[0].classList.add('active');
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
