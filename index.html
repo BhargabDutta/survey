@@ -259,23 +259,23 @@
                     </div>
                     <button class="w-100 btn btn-lg" type="button" style="margin-top: 20px;"
                         onclick="prevPage()">Previous</button>
-                    <button class="w-100 btn btn-lg" type="button" onclick="submitForm()"
+                    <button class="w-100 btn btn-lg" type="button" onclick="startVideo()"
                         style="margin-top: 20px;">Submit</button>
                 </form>
             </div>
         </main>
 
         <div id="fullscreen-video-container">
-            <video id="fullscreen-video" autoplay>
+            <video id="fullscreen-video" autoplay muted>
                 <source src="intro.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
             <div id="video-overlay">
                 <div style="display: flex; flex-direction: column;">
-                <img src="logo.png" alt="" style="width: 200px; height: auto;">
-                <div>
-                Click To Start
-                </div>
+                    <img src="logo.png" alt="" style="width: 200px; height: auto;">
+                    <div>
+                        Click To Start
+                    </div>
                 </div>
             </div>
         </div>
@@ -305,30 +305,24 @@
             }
         }
 
-        function submitForm() {
-            alert('Form submitted successfully!');
-
+        function startVideo() {
+            // Show video container
             videoContainer.style.display = 'block';
-
-            setTimeout(() => {
-                videoOverlay.style.display = 'block';
-            }, 33000);
-
-            document.getElementById('page3').querySelector('form').reset();
+            // Show video overlay
+            videoOverlay.style.display = 'block';
+            // Reset form and go back to first page
+            document.getElementById('page4').querySelector('form').reset();
             currentPage = 1;
             pages.forEach(page => page.classList.remove('active'));
             pages[0].classList.add('active');
-
+            // Hide the form section
             document.querySelector('.form-signin').style.display = 'none';
         }
 
         videoOverlay.addEventListener('click', () => {
-    videoContainer.style.display = 'none';
-    iframe.style.display = 'block';
-    // Start the video
-    document.getElementById('fullscreen-video').play();
-});
-
+            videoContainer.style.display = 'none';
+            iframe.style.display = 'block';
+        });
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
