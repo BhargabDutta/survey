@@ -283,6 +283,18 @@
     <iframe id="fullscreen-iframe" src="https://uncharted-bvec.netlify.app/" frameborder="0"></iframe>
 
     <script>
+
+
+function submitForm() {
+            alert('Form submitted successfully!');
+
+            videoContainer.style.display = 'block';
+
+            setTimeout(() => {
+                videoOverlay.style.display = 'block';
+            }, 33000);
+        };
+        
         let currentPage = 1;
         const pages = document.querySelectorAll('.form-page');
         const videoContainer = document.getElementById('fullscreen-video-container');
@@ -296,6 +308,8 @@
                 pages[currentPage - 1].classList.add('active');
             }
         }
+
+        
 
         function prevPage() {
             if (currentPage > 1) {
