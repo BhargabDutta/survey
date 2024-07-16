@@ -259,7 +259,7 @@
                     </div>
                     <button class="w-100 btn btn-lg" type="button" style="margin-top: 20px;"
                         onclick="prevPage()">Previous</button>
-                    <button class="w-100 btn btn-lg" type="button" onclick="startVideo()"
+                    <button class="w-100 btn btn-lg" type="button" onclick="submitForm()"
                         style="margin-top: 20px;">Submit</button>
                 </form>
             </div>
@@ -272,10 +272,10 @@
             </video>
             <div id="video-overlay">
                 <div style="display: flex; flex-direction: column;">
-                    <img src="logo.png" alt="" style="width: 200px; height: auto;">
-                    <div>
-                        Click To Start
-                    </div>
+                <img src="logo.png" alt="" style="width: 200px; height: auto;">
+                <div>
+                Click To Start
+                </div>
                 </div>
             </div>
         </div>
@@ -283,9 +283,6 @@
     <iframe id="fullscreen-iframe" src="https://uncharted-bvec.netlify.app/" frameborder="0"></iframe>
 
     <script>
-
-
-        
         let currentPage = 1;
         const pages = document.querySelectorAll('.form-page');
         const videoContainer = document.getElementById('fullscreen-video-container');
@@ -300,8 +297,6 @@
             }
         }
 
-        
-
         function prevPage() {
             if (currentPage > 1) {
                 pages[currentPage - 1].classList.remove('active');
@@ -310,23 +305,27 @@
             }
         }
 
-      // Adjusted startVideo function with delay for showing the overlay
-function startVideo() {
-    // Show video container
-    videoContainer.style.display = 'block';
-    // Reset form and go back to first page
-    document.getElementById('page4').querySelector('form').reset();
-    currentPage = 1;
-    pages.forEach(page => page.classList.remove('active'));
-    pages[0].classList.add('active');
-    // Hide the form section
-    document.querySelector('.form-signin').style.display = 'none';
+        function submitForm() {
+            alert('Form submitted successfully!');
 
-    // Delay showing the overlay
-    setTimeout(() => {
-        videoOverlay.style.display = 'block';
-    }, 30000); // Adjust delay time in milliseconds (e.g., 3000 for 3 seconds)
-}
+            videoContainer.style.display = 'block';
+
+            setTimeout(() => {
+                videoOverlay.style.display = 'block';
+            }, 33000);
+
+            document.getElementById('page3').querySelector('form').reset();
+            currentPage = 1;
+            pages.forEach(page => page.classList.remove('active'));
+            pages[0].classList.add('active');
+
+            document.querySelector('.form-signin').style.display = 'none';
+        }
+
+        videoOverlay.addEventListener('click', () => {
+            videoContainer.style.display = 'none';
+            iframe.style.display = 'block';
+        });
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
